@@ -4,19 +4,36 @@ export default function AppLayout() {
   return (
     <Drawer>
     <Drawer.Screen
-      name="index" // This is the name of the page and must match the url from root
+      name="index" 
       options={{
-        drawerLabel: "Home",
-        title: "overview",
+        drawerLabel: "Login",
+        title: "Faça Login",
       }}
     />
     <Drawer.Screen
-      name="user/[id]" // This is the name of the page and must match the url from root
+      name="User"
       options={{
         drawerLabel: "User",
-        title: "overview",
+        title: "Bem vindo(a)",
+      }}
+    />
+     <Drawer.Screen
+      name="TelaA"
+      options={{
+        drawerLabel: "TelaA",
+        title: "tela A",
+        drawerItemStyle: { height: 0 },
+      }}
+    />
+     <Drawer.Screen
+      name="TelaB"
+      options={{
+        drawerLabel: "TelaB",
+        title: "tela B",
+        drawerItemStyle: { height: 0 },
       }}
     />
   </Drawer>
+  
   );
 }
