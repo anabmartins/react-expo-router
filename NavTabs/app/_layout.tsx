@@ -1,29 +1,32 @@
-import { Drawer } from "expo-router/drawer";
+import { Tabs } from "expo-router";
 
 export default function AppLayout() {
   return (
-    <Drawer>
-    <Drawer.Screen
-      name="index" 
+    <Tabs>
+      <Tabs.Screen
+        name="index"
         options={{
-        drawerLabel: "Home",
-        title: "Principal",
-      }}
-    />
-    <Drawer.Screen
-      name="telaA" 
-      options={{
-        drawerLabel: "Tela A",
-        title: "bem vindo tela A",
-      }}
-    />
-    <Drawer.Screen
-      name="telaB" 
-      options={{
-        drawerLabel: "Tela B",
-        title: "bem vindo tela B",
-      }}
-    />
-  </Drawer>
+          href: '/',
+        }}
+      />
+       <Tabs.Screen
+        name="usuario"
+        options={{
+          href: 'usuario',
+        }}
+      />
+      <Tabs.Screen
+        name="telaA"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="telaB"
+        options={{
+          href: null,
+        }}
+      />
+    </Tabs>
   );
 }
