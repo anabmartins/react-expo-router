@@ -1,18 +1,58 @@
 # react-expo-router
 projeto utilizando Tabs e outro projeto utilizando Drawer
 
-## Nav Tab
+### Hide: 
+Drawer: drawerItemStyle: { height: 0 }
+Tabs: href:'null',
 
-ocultar tab
+## Nav Tab
+babel.config.js
 
 ```tsx
-<Tabs.Screen
-        name="tela B"
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: ["babel-preset-expo"],
+    plugins: [require.resolve("expo-router/babel")],
+  };
+};
+```
+
+_layout.tsx
+
+```tsx
+import { Tabs } from "expo-router";
+
+export default function AppLayout() {
+  return (
+    <Tabs>
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: '/',
+        }}
+      />
+       <Tabs.Screen
+        name="usuario"
+        options={{
+          href: 'usuario',
+        }}
+      />
+      <Tabs.Screen
+        name="telaA"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="telaB"
         options={{
           href: null,
         }}
       />
     </Tabs>
+  );
+}
 ```
 
 ## Nav Drawer
@@ -58,4 +98,23 @@ export default function AppLayout() {
   </Drawer>
   );
 }
+```
+
+**Para rodar web:**
+
+`npm install react-native-reanimated`
+
+babel.config.js:
+
+```tsx
+module.exports = {
+presets: [
+...
+],
+plugins: [
+...
+'@babel/plugin-proposal-export-namespace-from',
+'react-native-reanimated/plugin',
+],
+};
 ```
